@@ -174,27 +174,23 @@ body
     width:56px;
     transition-timing-function:linear;
 }
-.line_ht
-{
-    line-height: 27px;
-}
+
 .ht_about
 {
-    line-height: 27px;
+    
     text-align:justify;
 }
 .ht_skills
 {
-    line-height: 27px;
     text-align: justify;
 }
 .ht_education
 {
-    line-height: 27px;
+
     text-align: justify;
 }
 .ht_contact
 {
-    line-height: 27px;
+   
     text-align: justify;
 }
