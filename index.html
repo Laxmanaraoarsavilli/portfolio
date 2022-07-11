@@ -69,6 +69,26 @@
                 });
             }); 
     </script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        function msgsend()
+        {
+            let inp1=document.form1.fname.value;
+            let inp2=document.form1.mail.value;
+            let inp3=document.form1.comments.value;
+            Email.send({
+                    Host : 'smtp.elasticemail.com',
+                    Username : 'laxmanarao.arasavilli3@gmail.com',
+                    Password : 'D803F816B63C1E315B8DC138DF52103A8EFF',
+                    To :'laxmanarao.arasavilli3@gmail.com',
+                    From :'laxmanarao.arasavilli3@gmail.com',
+                    Subject : "Form Enquiry",
+                    Body : "Name: "+inp1+"<br>" 
+                            +"Email: "+inp2+"<br>"
+                            +"comments: "+inp3
+                }).then(message => alert("Message sent successfully")).catch((error)=>{alert("Message sending Error")});
+        }
+    </script>
 <body onload="typed_func()">
         <nav class="navbar navbar-expand-sm bg-dark sticky-top">
             <div class="container-fluid">
@@ -343,9 +363,9 @@
             </div>
             <div class="col-lg-5 col-md-12 col-sm-12 mt-2">
                 <h5 class="pt-4 pb-3">Message Me</h5>
-                <form action="" method="post" class="was-validated">
+                <form onsubmit="msgsend();reset(); return false" method="post" class="was-validated" name="form1">
                     <div class="form-floating mb-3">
-                        <input type="text" id="Name" name="name" class="form-control" placeholder="Enter Your Name" required>
+                        <input type="text" id="Name" name="fname" class="form-control" placeholder="Enter Your Name" required>
                         <label for="Name" class="form-label">Enter Your Name</label>
                     </div>
                     <div class="form-floating mb-3">
